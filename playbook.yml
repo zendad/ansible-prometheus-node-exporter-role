@@ -1,0 +1,12 @@
+---
+- name: prometheus playbook
+  hosts: prometheus-node-exporter
+  gather_facts: False
+  remote_user: ubuntu
+  become: true
+  become_user: root
+  become_method: sudo
+  roles:
+    - { role: prometheus-node-exporter }
+    - { role: prometheus-exporters-common }
+
